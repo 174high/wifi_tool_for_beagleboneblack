@@ -20,7 +20,7 @@ hostapd -B /data/misc/wifi/hostapd.conf
 ifconfig wlan0 192.168.100.1  netmask 255.255.255.0 
 
 echo 1 > /proc/sys/net/ipv4/ip_forward
-busybox udhcpd  udhcpd.conf
+busybox udhcpd  /data/misc/wifi/udhcpd.conf
 iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
 
 
