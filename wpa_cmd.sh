@@ -27,14 +27,37 @@ iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
 iw phy `ls /sys/class/ieee80211/` interface add p2p0 type managed
 
 
-ifconfig p2p0 192.168.3.3 netmask 255.255.255.0 up
+ifconfig p2p0 192.168.43.3 netmask 255.255.255.0 up
 
 wpa_supplicant  -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf &
 
-wpa_cli -p /data/misc/wifi/wlan0
-
+wpa_cli -p /data/misc/wifi/p2p0
 
 p2p_connect 8a:e3:ab:cb:4e:a4  pbc
+
+1.type it  p2p_connect  9a:0c:82:4d:3d:d8  pbc  on our platform
+
+2. connect our network on mobile 
+
+3.dhcpcd  p2p-p2p0-0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
